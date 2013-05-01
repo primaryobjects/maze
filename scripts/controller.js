@@ -38,8 +38,9 @@ function mazeController() {
 			}, this.speed);
 		}
 		else {
-			$('#txtStatus').text('Done!');
-
+			$('#btnGo').removeClass('disabled');
+			$('#btnGo').text('Go!');
+			
 			// Draw the solution path.
 			this.solve();
 		}

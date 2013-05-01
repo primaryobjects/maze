@@ -6,7 +6,13 @@ $(function() {
 			controller.init(maze); // Include the desired maze in maze.html: mazes/big.js, mazes/little.js, etc.
 			
 			$('#btnGo').click(function() {
-				controller.run();
+				if (!$('#btnGo').hasClass('disabled')) {
+					$('#btnGo').addClass('disabled');
+					$('#btnGo').text('Running ..');
+					
+					controller.init(maze); // clear maz
+					controller.run();
+				}
 			});
 			
 			$('#detailsDiv').click(function() {
