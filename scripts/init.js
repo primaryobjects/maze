@@ -8,6 +8,11 @@ $(function() {
 			$('#btnGo').click(function() {
 				controller.run();
 			});
+			
+			$('#detailsDiv').click(function() {
+				// Slide up/down the options.
+				$("#details").slideToggle("fast");
+			});		
 		});
 	}
 });
