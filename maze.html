@@ -4,10 +4,6 @@
 		<title>Simple Maze Solver in Javascript and HTML5</title>
 		<meta name="description" value="A simple maze solver in javascript and HTML5. This example draws a maze and traverses the maze using depth-first search, also called Trémaux's (Tremaux) algorithm." />
 		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js'></script>
-		<script type='text/javascript' src='scripts/maze.js'></script>
-		<script type='text/javascript' src='scripts/walker.js'></script>
-		<script type='text/javascript' src='scripts/alwaysRightAlgorithm.js'></script>
-		<script type='text/javascript' src='scripts/init.js'></script>
 	</head>
 	<body>
 		<div id='canvasDiv' style='float: left;'>
@@ -18,7 +14,14 @@
 		<div style='clear: both;'></div>
 		<div style='margin: 25px 0 0 0;'>
 			<input id='btnGo' type='button' value='Go!' />
-			<div id='txtStatus' style='font-size:20px;'></div>
+			<div id='txtStatus' style='font-family: verdana; font-size:20px;'></div>
 		</div>
+		
+		<script type='text/javascript' src='scripts/alwaysRightAlgorithm.js'></script>
+		<script type='text/javascript' src='scripts/walker.js'></script>
+		<script type='text/javascript' src='scripts/maze.js'></script>
+		<script type='text/javascript' src='scripts/controller.js'></script>
+		<script type='text/javascript' src='scripts/mazes/g.js'></script>		
+		<script type='text/javascript' src='scripts/init.js'></script>		
 	</body>
 </html>
