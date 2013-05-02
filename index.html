@@ -6,6 +6,7 @@
 		<meta name="keywords" content="maze,maze solver,maze algorithm,javascript maze,html5 maze,maze solving,maze heuristic,traverse maze,programming,software" />
 		<link rel='stylesheet' href='css/bootstrap.min.css' />
 		<link rel='stylesheet' href='css/bootstrap-responsive.min.css' />
+		<link rel='stylesheet' href='css/style.css' />
 		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
 		<script type="text/javascript">
 		  var _gaq = _gaq || [];
@@ -42,7 +43,7 @@
 						<i id='customDivIcon' class='icon-plus-sign'></i>
 					</div>
 					<div class='pull-left' style='margin: 0 0 0 5px;'>
-						More Mazes
+						Build a Maze
 					</div>
 				</div>
 				<div style='clear: both;'></div>
@@ -167,7 +168,7 @@
 						<div style='clear: both;'></div>
 					</p>
 					<p>Build your own maze! This app supports query string url parameters! That means, with a little whizbang JSON, you can change the url and provide your very own maze for the algorithm to run through! Cool?</p>
-					<p>Examine the urls of the above example mazes to see how it works. Or read below, if you're really smart.</p>
+					<p>Examine the urls of the above example mazes to see how it works. Read below for the details.</p>
 					<p>Edit the url and append a string similar to the following:
 						<br/>
 						<span class='text-success'>
@@ -204,6 +205,26 @@
 							</tr>
 						</tbody>
 					</table>
+					<div id='jsonExample' class='bs-docs-example'>
+						<p><em>Remove all linebreaks from the map when sending in url</em></p>
+							<pre>
+{"start": {"x": 3, "y": 0},
+ "end": {"x": 6, "y": 0},
+ "width": 20,
+ "height": 10,
+ "map": "
+***.**.*************
+***....*************
+**..****.........***
+*..****..*******.***
+*.****..********...*
+*.****.***********.*
+*.****........***..*
+*.**************..**
+*................***
+********************"}
+							</pre>
+					</div>
 				</div>
 
 			</div>
