@@ -22,7 +22,7 @@
 		</script>
 	</head>
 	<body>		
-		<div class='container'>
+		<div class='container' style='margin-left: 30px;'>
 			<h1>Javascript Maze Solver</h1>
 			<div class="pull-left" style='margin: 0 0 25px 0;'>
 				<p>A simple <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm" target="_blank">maze solver</a>, created with Javascript and HTML5. Traverses a maze and uses a depth-first search (called <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm#Tr.C3.A9maux.27s_algorithm" target="_blank">Tremaux's algorithm</a>) to find its way through. Oh, did I mention you can make your own maze with JSON, right in the url?</p>
@@ -190,6 +190,14 @@
 	*********.********************
 	"}'>Alien</a>
 						</div>
+						<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
+						<div class='pull-left'>
+							<a href='#' class='loadMaze' data-file='scripts/mazes/61x61.js'>Classic Maze I</a>
+						</div>
+						<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
+						<div class='pull-left'>
+							<a href='#' class='loadMaze' data-file='scripts/mazes/201x201.js'>Classic Maze II</a>
+						</div>
 						<div style='clear: both;'></div>
 					</p>
 					<p>Build your own maze! This app supports query string url parameters! That means, with a little whizbang JSON, you can change the url and provide your very own maze for the algorithm to run through! Cool?</p>
@@ -254,6 +262,7 @@
 
 			</div>
 			
+			<div id='canvasStatus'></div>
 			<div id='canvasDiv' style='float: left;'>
 			  <canvas id='imageView'>
 				<p>No HTML5? Seriously?</p>
@@ -282,10 +291,10 @@
 		<script type='text/javascript' src='scripts/walker.js'></script>
 		<script type='text/javascript' src='scripts/maze.js'></script>
 		<script type='text/javascript' src='scripts/controller.js'></script>
-		<script type='text/javascript' src='scripts/mazes/big.js'></script>		
+		<script type='text/javascript' src='scripts/mazes/g.js'></script>		
 		<script type='text/javascript' src='scripts/commonManager.js'></script>
 		<script type='text/javascript' src='scripts/init.js'></script>
-		<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+		<!--<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=surfer6"></script>
 		<script type="text/javascript">
 			var disqus_shortname = 'primaryobjects';
@@ -297,6 +306,6 @@
 				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 			})();
-		</script>
+		</script>-->
 	</body>
 </html>

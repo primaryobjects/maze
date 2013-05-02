@@ -6,7 +6,7 @@ $(function() {
 			// Read any maze provided in the url querystring ?maze={start: {x: 3, y: 0}, end: {x: 6, y: 0}, width: 20, height: 10, map: '**** **** ...'}
 			commonManager.readCustomMaze();
 			
-			// Include the desired maze in maze.html (mazes/big.js, mazes/little.js, etc.) or via querystring.
+			// Include the desired starting maze in maze.html (mazes/big.js, mazes/little.js, etc.) or via querystring.
 			controller.init(maze);
 			
 			$('#btnGo').click(function() {
@@ -46,6 +46,21 @@ $(function() {
 			$('#customizeLink').click(function() {
 				// Slide up/down the options.
 				$("#custom").slideToggle("fast");
+			});
+			
+			$('.loadMaze').click(function() {
+				// Hide the details panel.
+				$('#customDiv').click();
+				
+				// Import the script into the browser.
+				commonManager.loadCustomMaze($(this).data('file'));
+
+				// Hide the canvas as show the loading text.
+				$('#canvasDiv').hide();
+				$('#canvasStatus').text('loading maze ..');
+				
+				// Wait for script to load.
+				window.setTimeout(function() { $('#canvasStatus').text(''); $('#canvasDiv').show(); controller.init(maze); }, 3000);
 			});
 		});
 	}

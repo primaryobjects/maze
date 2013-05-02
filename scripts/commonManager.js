@@ -25,5 +25,22 @@ var commonManager = {
 		}
 		
 		return false;
+	},
+	
+	loadCustomMaze: function(filename) {
+		if (filename != null) {
+			// Load script instead.
+			maze = null;
+			
+			var head = document.head || document.getElementsByTagName('head')[0];
+			var script = document.createElement("script");
+			script.type = 'text/javascript';
+			script.src = filename;
+			head.insertBefore(script, head.firstChild);
+		
+			return true;
+		}
+		
+		return false;
 	}
 };
