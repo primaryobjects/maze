@@ -45,11 +45,16 @@
 			
 			<div id='footer' style='margin: 25px 0 0 0; padding: 6px 0 0 0; border-top: 1px solid #a0a0a0;'>
 				<p class='muted'>
-					Created by <a href='http://www.primaryobjects.com/kory-becker.aspx' target='_blank'>Kory Becker</a>
+					Created by <a href='http://www.primaryobjects.com/kory-becker.aspx' target='_blank' rel='author'>Kory Becker</a> 2013
 					<br/>
 					Source code @ <a href='http://www.github.com/primaryobjects/maze' target='_blank'>GitHub</a>
 				</p>
 			</div>
+			
+			<div id='comments' style='margin: 10px 0 0 0;'>
+				<div id="disqus_thread"></div>
+				<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    		</div>
 		</div>
 		
 		<script type='text/javascript' src='scripts/alwaysRightAlgorithm.js'></script>
@@ -58,7 +63,16 @@
 		<script type='text/javascript' src='scripts/controller.js'></script>
 		<script type='text/javascript' src='scripts/mazes/big.js'></script>		
 		<script type='text/javascript' src='scripts/init.js'></script>
-		<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=surfer6"></script>
+		<!--<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=surfer6"></script>-->
+		<script type="text/javascript">
+			var disqus_shortname = 'primaryobjects';
+
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
 	</body>
 </html>
