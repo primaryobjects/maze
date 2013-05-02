@@ -16,22 +16,184 @@
 				
 				<div class="addthis_toolbox addthis_default_style "><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_button_pinterest_pinit"></a><a class="addthis_counter addthis_pill_style"></a></div>
 
-				<div id='detailsDiv' style='cursor: pointer;'>
+				<div id='detailsDiv' class='pull-left' style='cursor: pointer;'>
 					<div class='pull-left'>
-						<i class='icon-plus-sign'></i>
+						<i id='detailsDivIcon' class='icon-plus-sign'></i>
 					</div>
 					<div class='pull-left' style='margin: 0 0 0 5px;'>
 						Nerdy Details
 					</div>
 				</div>
-				<div style='clear: both;'></div>
 				
+				<div id='customDiv' class='pull-left' style='cursor: pointer; margin: 0 0 0 10px;'>
+					<div class='pull-left'>
+						<i id='customDivIcon' class='icon-plus-sign'></i>
+					</div>
+					<div class='pull-left' style='margin: 0 0 0 5px;'>
+						More Mazes
+					</div>
+				</div>
+				<div style='clear: both;'></div>
+
 				<div id='details' class='well' style='display: none; margin: 8px 0 0 0;'>
 					<p>The algorithm begins in a random direction and continues until it hits a wall. It then turns right, until a path is available to walk. Each time the algorithm takes a step, it marks the tile as visited.</p>
 					<p>The algorithm always tries to first visit an un-visited tile. However, if no new tiles are found, it will backtrack over a visited tile.</p>
 					<p>It will never visit the same tile more than twice (with the only exception being if the algorithm is stuck in a dead-end, in which case it will re-visit a tile it's already backtracked over, in order to exit the trap).</p>
 					<p>The maze solution is all tiles that have been visited once.</p>
 				</div>
+				
+				<div id='custom' class='well' style='display: none; margin: 8px 0 0 0;'>
+					<p>
+						<div class='pull-left'>
+							<a href='?maze={"start": {"x": 3, "y": 0},	"end": {"x": 6, "y": 0}, "width": 20, "height": 10, "map": "
+	***.**.*************
+	***....*************
+	**..****.........***
+	*..****..*******.***
+	*.****..********...*
+	*.****.***********.*
+	*.****........***..*
+	*.**************..**
+	*................***
+	********************"}'>'G' Maze</a>
+						</div>
+						<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
+						<div class='pull-left'>
+							<a href='?maze={"start": {"x": 2, "y": 0},	"end": {"x": 19, "y": 3}, "width": 20, "height": 10, "map": "
+	**.*****************
+	**.****............*
+	**......*****.******
+	**.*********........
+	*..*********.*******
+	**....******.***.***
+	*****......*.***.***
+	**....****.*.....***
+	**.***.....*****...*
+	********************"}'>Little Maze</a>
+						</div>
+						<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
+						<div class='pull-left'>
+							<a href='?maze={"start": {"x": 23, "y": 0}, "end": {"x": 22, "y": 19}, "width": 50, "height": 20, "map": "
+	***********************.**************************
+	***********************..*************************
+	************************..************************
+	*************************..***********************
+	**************************..............**********
+	***************************************..*********
+	****************...................*****..********
+	*************....*****************...****..*******
+	**********....****............******..****..******
+	********...****....**********....****....**..*****
+	********.******.*******....*****....****.***..****
+	********.******.....******.....****.****.****..***
+	********...********.....******......****.*****.***
+	**********.....********.....**********...*****.***
+	**************.....********.....***....*****...***
+	******************....*********.....******...*****
+	*********************.....*************....*******
+	**********************.**....*******....**********
+	**********************.*****.........*************
+	**********************.***************************"}'>Vortex</a>
+						</div>
+						<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
+						<div class='pull-left'>
+							<a href='?maze={"start": {"x": 1, "y": 51}, "end": {"x": 27, "y": 51}, "width": 30, "height": 52, "map": "
+	******************************
+	*******....********....***...*
+	******..**.*******..**..*..***
+	*****..*****..***..****...****
+	*****.**....*..**.*******.****
+	*****.**.**.**.**.*******.****
+	****..**.**.**.**.*******.****
+	****.***.**.**.**.*******...**
+	****.***.**.**.**.*******.*.**
+	****.***.**.**.**.*******.*.**
+	****.***.**.**.**...*****.*.**
+	****.***.**.**.**.*..****.*.**
+	****.***.**.**.**.**.****.*.**
+	****.***.**.**.**.**.****.*.**
+	****.***.**.**.**.**.****.*.**
+	****.***.**.**.**.**.****.*..*
+	****.***.**.**.**.**.****.**.*
+	***..**..**.**.**.**.****.**.*
+	***.***.***.**.**.**.****.**.*
+	***.***.***.**.**.**.****.**.*
+	***.***.***.**....**.****.**.*
+	***.***.***.*****.**.****.**.*
+	***.***.***.**....**..***.****
+	***.***.***.**.**.***.***.**.*
+	***.***.***.**.**.***.***.**.*
+	***.***.***.**.**.***.***.**.*
+	***.***.***.**.**.***.***.**.*
+	***.**..***.**.**.***.***.**.*
+	***.*..****.**.**.***.***.**.*
+	***...*****.**.**.***.***.**.*
+	***.*******.**.**.*******.**.*
+	***.*******.*..**.***.***.**.*
+	***.*******...***.**..***.**.*
+	***.**....*.***.*.**.****.**.*
+	**..**.**.*.***.*.**.****.**.*
+	**.***.**.*.***.*.**.****.**.*
+	**.***.**.*.***.*.**.****.**.*
+	**.***.**.*.***.*.*..****.**.*
+	**.***.**.*.***.*.*.*****.*..*
+	**.***.**.*.***.*.*.*****...**
+	**.***.**.*.***.*.*.*****.****
+	**.***.**.*..*..*.*.*****.****
+	*..***.**.**...**.*.*****.****
+	*.**...**.**.****.*.*****.****
+	*....****.**.****...*****.****
+	*.*******.**.****.*******.****
+	*.*******..*.**.....*****.****
+	*.********.***..***...***..***
+	*.********.*...******...**..**
+	*.......**********************
+	*.*****.....................**
+	*.*************************.**
+	"}'>Bird's Eye View</a>
+						</div>
+						<div style='clear: both;'></div>
+					</p>
+					<p>Build your own maze! This app supports query string url parameters! That means, with a little whizbang JSON, you can change the url and provide your very own maze for the algorithm to run through! Cool?</p>
+					<p>Examine the urls of the above example mazes to see how it works. Or read below, if you're really smart.</p>
+					<p>Edit the url and append a string similar to the following:
+						<br/>
+						<span class='text-success'>
+						?maze={"start": {"x": 3, "y": 0},	"end": {"x": 6, "y": 0}, "width": 20, "height": 10, "map": "****.*****.*****"}
+						</span>
+					</p>
+					<table class="table table-condensed">
+						<thead>
+							<tr>
+								<th style='width:80px;'>Property</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>start (x, y)</td>
+								<td>Starting x,y coordinate to begin traversing the map</td>
+							</tr>
+							<tr>
+								<td>end (x, y)</td>
+								<td>Exit x,y coordinate to indicate when you have exited the map</td>
+							</tr>
+							<tr>
+								<td>width</td>
+								<td>Width of the map (dependent on the height). For example: *** equals a width of 3</td>
+							</tr>
+							<tr>
+								<td>height</td>
+								<td>Height of the map (dependent on the width). For example: **.*** with a width of 3, has a height of 2</td>
+							</tr>
+							<tr>
+								<td>map</td>
+								<td>Content of the maze. Use an asterik * to denote a wall. Use any other character to denote a walkable tile.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
 			</div>
 			
 			<div id='canvasDiv' style='float: left;'>
@@ -43,169 +205,7 @@
 			<div style='margin: 25px 0 0 0;'>
 				<button id='btnGo' class='btn'>Go!</button>
 			</div>
-						
-			<div id='customDiv' style='cursor: pointer; margin: 20px 0 0 0;'>
-				<div class='pull-left'>
-					<i class='icon-plus-sign'></i>
-				</div>
-				<div class='pull-left' style='margin: 0 0 0 5px;'>
-					More Mazes
-				</div>
-			</div>
-			<div style='clear: both;'></div>
 
-			<div id='custom' class='well' style='display: none; margin: 8px 0 0 0;'>
-				<p>
-					<div class='pull-left'>
-						<a href='?maze={"start": {"x": 3, "y": 0},	"end": {"x": 6, "y": 0}, "width": 20, "height": 10, "map": "
-***.**.*************
-***....*************
-**..****.........***
-*..****..*******.***
-*.****..********...*
-*.****.***********.*
-*.****........***..*
-*.**************..**
-*................***
-********************"}'>'G' Maze</a>
-					</div>
-					<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
-					<div class='pull-left'>
-						<a href='?maze={"start": {"x": 2, "y": 0},	"end": {"x": 19, "y": 3}, "width": 20, "height": 10, "map": "
-**.*****************
-**.****............*
-**......*****.******
-**.*********........
-*..*********.*******
-**....******.***.***
-*****......*.***.***
-**....****.*.....***
-**.***.....*****...*
-********************"}'>Little Maze</a>
-					</div>
-					<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
-					<div class='pull-left'>
-						<a href='?maze={"start": {"x": 23, "y": 0}, "end": {"x": 22, "y": 19}, "width": 50, "height": 20, "map": "
-***********************.**************************
-***********************..*************************
-************************..************************
-*************************..***********************
-**************************..............**********
-***************************************..*********
-****************...................*****..********
-*************....*****************...****..*******
-**********....****............******..****..******
-********...****....**********....****....**..*****
-********.******.*******....*****....****.***..****
-********.******.....******.....****.****.****..***
-********...********.....******......****.*****.***
-**********.....********.....**********...*****.***
-**************.....********.....***....*****...***
-******************....*********.....******...*****
-*********************.....*************....*******
-**********************.**....*******....**********
-**********************.*****.........*************
-**********************.***************************"}'>Vortex</a>
-					</div>
-					<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
-					<div class='pull-left'>
-						<a href='?maze={"start": {"x": 1, "y": 51}, "end": {"x": 27, "y": 51}, "width": 30, "height": 52, "map": "
-******************************
-*******....********....***...*
-******..**.*******..**..*..***
-*****..*****..***..****...****
-*****.**....*..**.*******.****
-*****.**.**.**.**.*******.****
-****..**.**.**.**.*******.****
-****.***.**.**.**.*******...**
-****.***.**.**.**.*******.*.**
-****.***.**.**.**.*******.*.**
-****.***.**.**.**...*****.*.**
-****.***.**.**.**.*..****.*.**
-****.***.**.**.**.**.****.*.**
-****.***.**.**.**.**.****.*.**
-****.***.**.**.**.**.****.*.**
-****.***.**.**.**.**.****.*..*
-****.***.**.**.**.**.****.**.*
-***..**..**.**.**.**.****.**.*
-***.***.***.**.**.**.****.**.*
-***.***.***.**.**.**.****.**.*
-***.***.***.**....**.****.**.*
-***.***.***.*****.**.****.**.*
-***.***.***.**....**..***.****
-***.***.***.**.**.***.***.**.*
-***.***.***.**.**.***.***.**.*
-***.***.***.**.**.***.***.**.*
-***.***.***.**.**.***.***.**.*
-***.**..***.**.**.***.***.**.*
-***.*..****.**.**.***.***.**.*
-***...*****.**.**.***.***.**.*
-***.*******.**.**.*******.**.*
-***.*******.*..**.***.***.**.*
-***.*******...***.**..***.**.*
-***.**....*.***.*.**.****.**.*
-**..**.**.*.***.*.**.****.**.*
-**.***.**.*.***.*.**.****.**.*
-**.***.**.*.***.*.**.****.**.*
-**.***.**.*.***.*.*..****.**.*
-**.***.**.*.***.*.*.*****.*..*
-**.***.**.*.***.*.*.*****...**
-**.***.**.*.***.*.*.*****.****
-**.***.**.*..*..*.*.*****.****
-*..***.**.**...**.*.*****.****
-*.**...**.**.****.*.*****.****
-*....****.**.****...*****.****
-*.*******.**.****.*******.****
-*.*******..*.**.....*****.****
-*.********.***..***...***..***
-*.********.*...******...**..**
-*.......**********************
-*.*****.....................**
-*.*************************.**
-"}'>Bird's Eye View</a>
-					</div>
-					<div style='clear: both;'></div>
-				</p>
-				<p>Build your own maze! This app supports query string url parameters! That means, with a little whizbang JSON, you can change the url and provide your very own maze for the algorithm to run through! Cool?</p>
-				<p>Examine the urls of the above example mazes to see how it works. Or read below, if you're really smart.</p>
-				<p>Edit the url and append a string similar to the following:
-					<br/>
-					<span class='text-success'>
-					?maze={"start": {"x": 3, "y": 0},	"end": {"x": 6, "y": 0}, "width": 20, "height": 10, "map": "****.*****.*****"}
-					</span>
-				</p>
-				<table class="table table-condensed">
-					<thead>
-						<tr>
-							<th style='width:80px;'>Property</th>
-							<th>Description</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>start (x, y)</td>
-							<td>Starting x,y coordinate to begin traversing the map</td>
-						</tr>
-						<tr>
-							<td>end (x, y)</td>
-							<td>Exit x,y coordinate to indicate when you have exited the map</td>
-						</tr>
-						<tr>
-							<td>width</td>
-							<td>Width of the map (dependent on the height). For example: *** equals a width of 3</td>
-						</tr>
-						<tr>
-							<td>height</td>
-							<td>Height of the map (dependent on the width). For example: **.*** with a width of 3, has a height of 2</td>
-						</tr>
-						<tr>
-							<td>map</td>
-							<td>Content of the maze. Use an asterik * to denote a wall. Use any other character to denote a walkable tile.</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>					
-			
 			<div id='footer' style='margin: 25px 0 0 0; padding: 6px 0 0 0; border-top: 1px solid #a0a0a0;'>
 				<p class='muted'>
 					Created by <a href='http://www.primaryobjects.com/kory-becker.aspx' target='_blank' rel='author'>Kory Becker</a> 2013
@@ -227,7 +227,7 @@
 		<script type='text/javascript' src='scripts/mazes/big.js'></script>		
 		<script type='text/javascript' src='scripts/commonManager.js'></script>
 		<script type='text/javascript' src='scripts/init.js'></script>
-		<!--<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+		<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=surfer6"></script>
 		<script type="text/javascript">
 			var disqus_shortname = 'primaryobjects';
@@ -237,6 +237,6 @@
 				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 			})();
-		</script>-->
+		</script>
 	</body>
 </html>

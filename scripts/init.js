@@ -20,11 +20,25 @@ $(function() {
 			});
 			
 			$('#detailsDiv').click(function() {
+				if ($('#details').is(':visible')) {
+					$('#detailsDivIcon').attr('class', 'icon-plus-sign');
+				}
+				else {
+					$('#detailsDivIcon').attr('class', 'icon-minus-sign');
+				}
+
 				// Slide up/down the options.
-				$("#details").slideToggle("fast");
+				$("#details").slideToggle("fast");			
 			});		
 
 			$('#customDiv').click(function() {
+				if ($('#custom').is(':visible')) {
+					$('#customDivIcon').attr('class', 'icon-plus-sign');
+				}
+				else {
+					$('#customDivIcon').attr('class', 'icon-minus-sign');
+				}
+
 				// Slide up/down the options.
 				$("#custom").slideToggle("fast");
 			});
