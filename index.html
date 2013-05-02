@@ -14,7 +14,7 @@
 			<div class="pull-left" style='margin: 0 0 25px 0;'>
 				<p>A simple <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm" target="_blank">maze solver</a>, created with Javascript and HTML5. Traverses a maze and uses a depth-first search (called <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm#Tr.C3.A9maux.27s_algorithm" target="_blank">Tremaux's algorithm</a>) to find its way through. Oh, did I mention you can make your own maze with JSON, right in the url? Click 'More Mazes' to see.</p>
 				
-				<div class="addthis_toolbox addthis_default_style "><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_button_pinterest_pinit"></a><a class="addthis_counter addthis_pill_style"></a></div>
+				<div class="addthis_toolbox addthis_default_style "><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_button_google_plusone" g:plusone:size="medium"></a><a class="addthis_counter addthis_pill_style"></a></div>
 
 				<div id='detailsDiv' class='pull-left' style='cursor: pointer;'>
 					<div class='pull-left'>
@@ -227,10 +227,12 @@
 		<script type='text/javascript' src='scripts/mazes/big.js'></script>		
 		<script type='text/javascript' src='scripts/commonManager.js'></script>
 		<script type='text/javascript' src='scripts/init.js'></script>
-		<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+		<script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=surfer6"></script>
 		<script type="text/javascript">
 			var disqus_shortname = 'primaryobjects';
+			var disqus_identifier = 'maze';
+			var disqus_url = 'http://www.primaryobjects.com/maze';
 
 			(function() {
 				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
