@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<title>Simple Maze Solver in Javascript and HTML5</title>
-		<meta name="description" value="A simple maze solver in javascript and HTML5. This example draws a maze and traverses the maze using depth-first search, also called Trémaux's (Tremaux) algorithm." />
+		<meta name="description" content="A simple maze solver in javascript and HTML5. Traverses a maze using depth-first search, also called Tremaux's algorithm." />
+		<meta name="keywords" content="maze,maze solver,maze algorithm,javascript maze,html5 maze,maze solving,maze heuristic,traverse maze,programming,software" />
 		<link rel='stylesheet' href='css/bootstrap.min.css' />
 		<link rel='stylesheet' href='css/bootstrap-responsive.min.css' />
 		<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
@@ -11,7 +12,7 @@
 		<div class='container'>
 			<h1>Javascript Maze Solver</h1>
 			<div class="pull-left" style='margin: 0 0 25px 0;'>
-				<p>A simple <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm" target="_blank">maze solver</a>, created with Javascript and HTML5. This example draws a maze, based upon a simple ASCII string, and uses a depth-first search (also called <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm#Tr.C3.A9maux.27s_algorithm" target="_blank">Tremaux's algorithm</a>) to find its way through.</p>
+				<p>A simple <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm" target="_blank">maze solver</a>, created with Javascript and HTML5. Traverses a maze and uses a depth-first search (called <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm#Tr.C3.A9maux.27s_algorithm" target="_blank">Tremaux's algorithm</a>) to find its way through. Oh, did I mention you can customize the maze with JSON? Click 'More Mazes' to see.</p>
 				
 				<div class="addthis_toolbox addthis_default_style "><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_button_pinterest_pinit"></a><a class="addthis_counter addthis_pill_style"></a></div>
 
@@ -42,6 +43,168 @@
 			<div style='margin: 25px 0 0 0;'>
 				<button id='btnGo' class='btn'>Go!</button>
 			</div>
+						
+			<div id='customDiv' style='cursor: pointer; margin: 20px 0 0 0;'>
+				<div class='pull-left'>
+					<i class='icon-plus-sign'></i>
+				</div>
+				<div class='pull-left' style='margin: 0 0 0 5px;'>
+					More Mazes
+				</div>
+			</div>
+			<div style='clear: both;'></div>
+
+			<div id='custom' class='well' style='display: none; margin: 8px 0 0 0;'>
+				<p>
+					<div class='pull-left'>
+						<a href='?maze={"start": {"x": 3, "y": 0},	"end": {"x": 6, "y": 0}, "width": 20, "height": 10, "map": "
+***.**.*************
+***....*************
+**..****.........***
+*..****..*******.***
+*.****..********...*
+*.****.***********.*
+*.****........***..*
+*.**************..**
+*................***
+********************"}'>'G' Maze</a>
+					</div>
+					<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
+					<div class='pull-left'>
+						<a href='?maze={"start": {"x": 2, "y": 0},	"end": {"x": 19, "y": 3}, "width": 20, "height": 10, "map": "
+**.*****************
+**.****............*
+**......*****.******
+**.*********........
+*..*********.*******
+**....******.***.***
+*****......*.***.***
+**....****.*.....***
+**.***.....*****...*
+********************"}'>Little Maze</a>
+					</div>
+					<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
+					<div class='pull-left'>
+						<a href='?maze={"start": {"x": 23, "y": 0}, "end": {"x": 22, "y": 19}, "width": 50, "height": 20, "map": "
+***********************.**************************
+***********************..*************************
+************************..************************
+*************************..***********************
+**************************..............**********
+***************************************..*********
+****************...................*****..********
+*************....*****************...****..*******
+**********....****............******..****..******
+********...****....**********....****....**..*****
+********.******.*******....*****....****.***..****
+********.******.....******.....****.****.****..***
+********...********.....******......****.*****.***
+**********.....********.....**********...*****.***
+**************.....********.....***....*****...***
+******************....*********.....******...*****
+*********************.....*************....*******
+**********************.**....*******....**********
+**********************.*****.........*************
+**********************.***************************"}'>Vortex</a>
+					</div>
+					<div class='pull-left' style='margin: 0 5px 0 5px;'>|</div>
+					<div class='pull-left'>
+						<a href='?maze={"start": {"x": 1, "y": 51}, "end": {"x": 27, "y": 51}, "width": 30, "height": 52, "map": "
+******************************
+*******....********....***...*
+******..**.*******..**..*..***
+*****..*****..***..****...****
+*****.**....*..**.*******.****
+*****.**.**.**.**.*******.****
+****..**.**.**.**.*******.****
+****.***.**.**.**.*******...**
+****.***.**.**.**.*******.*.**
+****.***.**.**.**.*******.*.**
+****.***.**.**.**...*****.*.**
+****.***.**.**.**.*..****.*.**
+****.***.**.**.**.**.****.*.**
+****.***.**.**.**.**.****.*.**
+****.***.**.**.**.**.****.*.**
+****.***.**.**.**.**.****.*..*
+****.***.**.**.**.**.****.**.*
+***..**..**.**.**.**.****.**.*
+***.***.***.**.**.**.****.**.*
+***.***.***.**.**.**.****.**.*
+***.***.***.**....**.****.**.*
+***.***.***.*****.**.****.**.*
+***.***.***.**....**..***.****
+***.***.***.**.**.***.***.**.*
+***.***.***.**.**.***.***.**.*
+***.***.***.**.**.***.***.**.*
+***.***.***.**.**.***.***.**.*
+***.**..***.**.**.***.***.**.*
+***.*..****.**.**.***.***.**.*
+***...*****.**.**.***.***.**.*
+***.*******.**.**.*******.**.*
+***.*******.*..**.***.***.**.*
+***.*******...***.**..***.**.*
+***.**....*.***.*.**.****.**.*
+**..**.**.*.***.*.**.****.**.*
+**.***.**.*.***.*.**.****.**.*
+**.***.**.*.***.*.**.****.**.*
+**.***.**.*.***.*.*..****.**.*
+**.***.**.*.***.*.*.*****.*..*
+**.***.**.*.***.*.*.*****...**
+**.***.**.*.***.*.*.*****.****
+**.***.**.*..*..*.*.*****.****
+*..***.**.**...**.*.*****.****
+*.**...**.**.****.*.*****.****
+*....****.**.****...*****.****
+*.*******.**.****.*******.****
+*.*******..*.**.....*****.****
+*.********.***..***...***..***
+*.********.*...******...**..**
+*.......**********************
+*.*****.....................**
+*.*************************.**
+"}'>Bird's Eye View</a>
+					</div>
+					<div style='clear: both;'></div>
+				</p>
+				<p>Build your own maze! This app supports query string url parameters! That means, with a little whizbang JSON, you can change the url and provide your very own maze for the algorithm to run through! Cool?</p>
+				<p>Examine the urls of the above example mazes to see how it works. Or read below, if you're really smart.</p>
+				<p>Edit the url and append a string similar to the following:
+					<br/>
+					<span class='text-success'>
+					?maze={"start": {"x": 3, "y": 0},	"end": {"x": 6, "y": 0}, "width": 20, "height": 10, "map": "****.*****.*****"}
+					</span>
+				</p>
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th style='width:80px;'>Property</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>start (x, y)</td>
+							<td>Starting x,y coordinate to begin traversing the map</td>
+						</tr>
+						<tr>
+							<td>end (x, y)</td>
+							<td>Exit x,y coordinate to indicate when you have exited the map</td>
+						</tr>
+						<tr>
+							<td>width</td>
+							<td>Width of the map (dependent on the height). For example: *** equals a width of 3</td>
+						</tr>
+						<tr>
+							<td>height</td>
+							<td>Height of the map (dependent on the width). For example: **.*** with a width of 3, has a height of 2</td>
+						</tr>
+						<tr>
+							<td>map</td>
+							<td>Content of the maze. Use an asterik * to denote a wall. Use any other character to denote a walkable tile.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>					
 			
 			<div id='footer' style='margin: 25px 0 0 0; padding: 6px 0 0 0; border-top: 1px solid #a0a0a0;'>
 				<p class='muted'>
@@ -62,9 +225,10 @@
 		<script type='text/javascript' src='scripts/maze.js'></script>
 		<script type='text/javascript' src='scripts/controller.js'></script>
 		<script type='text/javascript' src='scripts/mazes/big.js'></script>		
+		<script type='text/javascript' src='scripts/commonManager.js'></script>
 		<script type='text/javascript' src='scripts/init.js'></script>
 		<!--<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=surfer6"></script>-->
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=surfer6"></script>
 		<script type="text/javascript">
 			var disqus_shortname = 'primaryobjects';
 
@@ -73,6 +237,6 @@
 				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 			})();
-		</script>
+		</script>-->
 	</body>
 </html>
