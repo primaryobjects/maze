@@ -87,14 +87,15 @@ function searchAlgorithm(walker) {
  
                 // The g score is the shortest distance from start to current node.
                 // We need to check if the path we have arrived at this neighbor is the shortest one we have seen yet.
-                var gScore = currentNode.g + neighbor.cost;
+				// Include an additional cost for diagonals to help smoothing.
+                var gScore = currentNode.g + neighbor.cost + (neighbor.diag ? 2 : 0);
                 var beenVisited = neighbor.visited;
  
                 if(!beenVisited || gScore < neighbor.g) {
                     // Found an optimal (so far) path to this node.  Take score for node to see how good it is.
                     neighbor.visited = true;
                     neighbor.parent = currentNode;
-                    neighbor.h = neighbor.h || this.manhattan(neighbor.pos, this.end.pos);
+                    neighbor.h = neighbor.h || (this.diagonal ? this.diagonalDistance(neighbor.pos, this.end.pos) : this.manhattan(neighbor.pos, this.end.pos));
                     neighbor.g = gScore;
                     neighbor.f = neighbor.g + neighbor.h;
  
@@ -122,11 +123,19 @@ function searchAlgorithm(walker) {
     },
 	
     this.manhattan = function(pos0, pos1) {
-        // See list of heuristics: http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html
- 
+        // See list of heuristics: http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html 
         var d1 = Math.abs (pos1.x - pos0.x);
         var d2 = Math.abs (pos1.y - pos0.y);
+		
         return d1 + d2;
+    },
+	
+    this.diagonalDistance = function(pos0, pos1) {
+        // See list of heuristics: http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html 
+        var d1 = Math.abs (pos1.x - pos0.x);
+        var d2 = Math.abs (pos1.y - pos0.y);
+		
+        return (2 * Math.max(d1, d2));
     },
 	
     this.neighbors = function(grid, node, diagonals) {
@@ -159,21 +168,25 @@ function searchAlgorithm(walker) {
             // Southwest
             if(grid[x-1] && grid[x-1][y-1]) {
                 ret.push(grid[x-1][y-1]);
+				grid[x-1][y-1].diag = true;
             }
  
             // Southeast
             if(grid[x+1] && grid[x+1][y-1]) {
                 ret.push(grid[x+1][y-1]);
+				grid[x+1][y-1].diag = true;
             }
  
             // Northwest
             if(grid[x-1] && grid[x-1][y+1]) {
                 ret.push(grid[x-1][y+1]);
+				grid[x-1][y+1].diag = true;
             }
  
             // Northeast
             if(grid[x+1] && grid[x+1][y+1]) {
                 ret.push(grid[x+1][y+1]);
+				grid[x+1][y+1].diag = true;
             } 
         }
  
