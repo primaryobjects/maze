@@ -81,7 +81,7 @@ $(function() {
 					  
 					  // Load algorithm script.
 					  this.algorithm = null;
-					  commonManager.loadScript($('#algorithmType').val());
+					  commonManager.loadScript($('#algorithmType').val());					  
 				  });
 				});
 			});

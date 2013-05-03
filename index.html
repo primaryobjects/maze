@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Simple Maze Solver in Javascript and HTML5</title>
-		<meta name="description" content="A simple maze solver in javascript and HTML5. Traverses a maze using depth-first search, also called Tremaux's algorithm." />
-		<meta name="keywords" content="maze,maze solver,maze algorithm,javascript maze,html5 maze,maze solving,maze heuristic,traverse maze,programming,software" />
+		<meta name="description" content="A simple maze solver in javascript and HTML5. Traverses a maze using depth-first search, also called Tremaux's algorithm or by using A* Search." />
+		<meta name="keywords" content="maze,maze solver,maze algorithm,javascript maze,html5 maze,maze solving,maze heuristic,traverse maze,programming,software,A*,pathfinding,A* search" />
 		<link rel='stylesheet' href='css/bootstrap.min.css' />
 		<link rel='stylesheet' href='css/bootstrap-responsive.min.css' />
 		<link rel='stylesheet' href='css/style.css' />
@@ -25,7 +25,7 @@
 		<div class='container' style='margin-left: 30px;'>
 			<h1>Javascript Maze Solver</h1>
 			<div class="pull-left" style='margin: 0 0 25px 0;'>
-				<p>A simple <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm" target="_blank">maze solver</a>, created with Javascript and HTML5. Traverses a maze and uses a depth-first search (called <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm#Tr.C3.A9maux.27s_algorithm" target="_blank">Tremaux's algorithm</a>) to find its way through. Oh, did I mention you can make your own maze with JSON, right in the url?</p>
+				<p>A simple <a href="http://en.wikipedia.org/wiki/Maze_solving_algorithm" target="_blank">maze solver</a>, created with Javascript and HTML5. Traverses a maze and uses either a depth-first search (<a href='http://en.wikipedia.org/wiki/Maze_solving_algorithm#Tr.C3.A9maux.27s_algorithm' target='_blank'>Tremaux</a> algorithm) or a smart search (<a href='http://en.wikipedia.org/wiki/A*_search_algorithm' target='_blank'>A* search</a> algorithm) to find its way through. Oh, did I mention you can make your own maze with JSON, right in the url?</p>
 				
 				<div class="addthis_toolbox addthis_default_style "><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a><a class="addthis_button_tweet"></a><a class="addthis_button_google_plusone" g:plusone:size="medium"></a><a class="addthis_counter addthis_pill_style"></a></div>
 
@@ -49,10 +49,16 @@
 				<div style='clear: both;'></div>
 
 				<div id='details' class='well' style='display: none; margin: 8px 0 0 0;'>
-					<p>The algorithm begins in a random direction and continues until it hits a wall. It then turns right, until a path is available to walk. Each time the algorithm takes a step, it marks the tile as visited.</p>
+					<h4>Tremaux Algorithm</h4>
+					<p>The Tremaux algorithm is similar to actually walking through the maze. Only the immediate tiles visible to you can be followed.</p>
+					<p>It begins in a random direction and continues until it hits a wall. It then turns right, until a path is available to walk. Each time the algorithm takes a step, it marks the tile as visited.</p>
 					<p>The algorithm always tries to first visit an un-visited tile. However, if no new tiles are found, it will backtrack over a visited tile.</p>
 					<p>It will never visit the same tile more than twice (with the only exception being if the algorithm is stuck in a dead-end, in which case it will re-visit a tile it's already backtracked over, in order to exit the trap).</p>
 					<p>The maze solution is all tiles that have been visited once.</p>
+
+					<h4>A* Search Algorithm</h4>
+					<p>A* search is similar to having an aerial view of the maze before walking through it. It uses the maze end point to calculate a score from each neighboring tile. It intelligently walks down multiple paths, seemingly at the same time, until it reaches the end.</p>
+					<p>You would not be able to use this algorithm if you were physically traversing the maze. At least, not easily.</p>
 				</div>
 				
 				<div id='custom' class='well' style='display: none; margin: 8px 0 0 0;'>

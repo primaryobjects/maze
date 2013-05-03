@@ -23,7 +23,7 @@ function walkerManager(context, maze) {
 	},
 	
 	this.draw = function() {
-		this.context.fillStyle = 'rgb(0, 155, 0)';
+		this.context.fillStyle = 'rgb(255, 100, 100)';
 		this.context.fillRect(this.x * 10, this.y * 10, 10, 10);
 	},
 	

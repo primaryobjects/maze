@@ -65,6 +65,9 @@ function searchAlgorithm(walker) {
 				return;
             }
  
+			this.context.fillStyle = 'rgb(255, 0, 0)';
+			this.context.fillRect(currentNode.x * 10, currentNode.y * 10, 10, 10);
+ 
             // Normal case -- move currentNode from open to closed, process each of its neighbors.
             currentNode.closed = true;
  
@@ -79,16 +82,12 @@ function searchAlgorithm(walker) {
                     continue;
                 }
  
-				this.context.fillStyle = 'rgb(255, 0, 0)';
-				this.context.fillRect(currentNode.x * 10, currentNode.y * 10, 10, 10);
- 
                 // The g score is the shortest distance from start to current node.
                 // We need to check if the path we have arrived at this neighbor is the shortest one we have seen yet.
                 var gScore = currentNode.g + neighbor.cost;
                 var beenVisited = neighbor.visited;
  
                 if(!beenVisited || gScore < neighbor.g) {
- 
                     // Found an optimal (so far) path to this node.  Take score for node to see how good it is.
                     neighbor.visited = true;
                     neighbor.parent = currentNode;
@@ -98,6 +97,9 @@ function searchAlgorithm(walker) {
  
                     if (!beenVisited) {
                         // Pushing to heap will put it in proper place based on the 'f' value.
+						this.context.fillStyle = 'rgb(255, 100, 100)';
+						this.context.fillRect(neighbor.x * 10, neighbor.y * 10, 10, 10);
+						
                         this.openHeap.push(neighbor);
                     }
                     else {
