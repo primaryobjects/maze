@@ -17,10 +17,10 @@ function mazeController() {
 		// Initialize speed.
 		this.speed = maze.speed == null ? 50 : maze.speed;
 
-		// Adjust the speed for A* search, since it uses a breadth-first type of search, and would slow down due to multiple paths.
+/*		// Adjust the speed for A* search, since it uses a breadth-first type of search, and would slow down due to multiple paths.
 		if ($('#algorithmType').val().indexOf('aStar') != -1) {
 			controller.speed = controller.speed / 2;
-		}
+		}*/
 		
 		// Create maze.
 		this.maze = new mazeManager(this.context, maze);
