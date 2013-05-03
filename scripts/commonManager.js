@@ -30,17 +30,20 @@ var commonManager = {
 	loadCustomMaze: function(filename) {
 		if (filename != null) {
 			// Load script instead.
-			maze = null;
+			maze = null;			
+			this.loadScript(filename);
 			
-			var head = document.head || document.getElementsByTagName('head')[0];
-			var script = document.createElement("script");
-			script.type = 'text/javascript';
-			script.src = filename;
-			head.insertBefore(script, head.firstChild);
-		
 			return true;
 		}
 		
 		return false;
+	},
+	
+	loadScript: function(filename) {
+		var head = document.head || document.getElementsByTagName('head')[0];
+		var script = document.createElement("script");
+		script.type = 'text/javascript';
+		script.src = filename;
+		head.insertBefore(script, head.firstChild);
 	}
 };

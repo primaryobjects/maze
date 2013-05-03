@@ -26,7 +26,7 @@ function mazeController() {
 		this.walker.init();
 
 		// Initialize the maze algorithm.
-		this.algorithm = new alwaysRightAlgorithm(this.walker, this.maze.end);
+		this.algorithm = new searchAlgorithm(this.walker);
 	},
 	
 	this.run = function() {
@@ -41,23 +41,11 @@ function mazeController() {
 			$('#btnGo').removeClass('disabled');
 			$('#btnGo').text('Go!');
 			
+			// Clear map so we can draw the solution path.
+			this.walker.maze.draw(true);
+			
 			// Draw the solution path.
-			this.solve();
-		}
-	},
-	
-	this.solve = function() {
-		// Clear map so we can draw the solution path.
-		this.maze.draw(true);
-		
-		// Draw solution path.
-		for (var x = 0; x < this.maze.width; x++) {
-			for (var y = 0; y < this.maze.height; y++) {
-				if (this.walker.visited[x][y] == 1) {
-					this.context.fillStyle = 'red';
-					this.context.fillRect(x * 10, y * 10, 10, 10);					
-				}
-			}
+			this.algorithm.solve();
 		}
 	}
 };

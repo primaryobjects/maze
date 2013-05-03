@@ -62,6 +62,29 @@ $(function() {
 				// Wait for script to load.
 				window.setTimeout(function() { $('#canvasStatus').text(''); $('#canvasDiv').show(); controller.init(maze); }, 3000);
 			});
+			
+			// Add click event on the radio buttons.
+			$('div.btn-group[data-toggle-name=*]').each(function() {
+				var group   = $(this);
+				var name    = group.data('toggle-name');
+				var hidden  = $('input[name="' + name + '"]');
+				$('button', group).each(function(){
+				  var button = $(this);
+				  button.live('click', function(){
+					  hidden.val($(this).val());
+					  
+					  // De-select active button.
+					  $('button.active').removeClass('active');
+					  
+					  // Set active button.
+					  button.addClass('active');
+					  
+					  // Load algorithm script.
+					  this.algorithm = null;
+					  commonManager.loadScript($('#algorithmType').val());
+				  });
+				});
+			});
 		});
 	}
 });

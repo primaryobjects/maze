@@ -1,7 +1,7 @@
-function alwaysRightAlgorithm(walker, end) {
+function searchAlgorithm(walker) {
 	this.walker = walker,
 	this.direction = 0,
-	this.end = end,
+	this.end = walker.maze.end,
 	
 	this.step = function() {
 		var startingDirection = this.direction;
@@ -33,6 +33,18 @@ function alwaysRightAlgorithm(walker, end) {
 	},
 	
 	this.isDone = function() {
-		return (walker.x == end.x && walker.y == end.y);
-	}
+		return (walker.x == walker.maze.end.x && walker.y == walker.maze.end.y);
+	},
+	
+	this.solve = function() {
+		// Draw solution path.
+		for (var x = 0; x < this.walker.maze.width; x++) {
+			for (var y = 0; y < this.walker.maze.height; y++) {
+				if (this.walker.visited[x][y] == 1) {
+					this.walker.context.fillStyle = 'red';
+					this.walker.context.fillRect(x * 10, y * 10, 10, 10);					
+				}
+			}
+		}
+	}	
 };
