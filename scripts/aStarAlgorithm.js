@@ -26,6 +26,9 @@ function searchAlgorithm(walker) {
             }
         }
 		
+		this.start.g = 0;
+		this.end.g = 0;
+		
 		this.openHeap = this.heap();
         this.openHeap.push(this.start);	
     },
