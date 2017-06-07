@@ -86,10 +86,18 @@ function walkerManager(context, maze) {
 		var point = {};
 
 		switch (direction) {
-			case 0: point.x = this.x; point.y = this.y - 1; break;
-			case 1: point.x = this.x + 1; point.y = this.y; break;
-			case 2: point.x = this.x; point.y = this.y + 1; break;
-			case 3: point.x = this.x - 1; point.y = this.y; break;
+			case 0: point.x = this.x;
+				point.y = this.y - 1;
+				break;
+			case 1: point.x = this.x + 1;
+				point.y = this.y;
+				break;
+			case 2: point.x = this.x;
+				point.y = this.y + 1;
+				break;
+			case 3: point.x = this.x - 1;
+				point.y = this.y;
+				break;
 		};
 		
 		return point;
